@@ -36,5 +36,3 @@ plot(perf1, col ="#c5db90",lwd = 2.5 )  #  #86a2d1 #c5db90 #d4b179
 auc<-  performance(pred1,"auc")
 auc_area<-slot(auc,"y.values")[[1]]; #auc_area<-auc@"y.values"[[1]];
 auc_area<-round(auc_area,4)
-
-## 

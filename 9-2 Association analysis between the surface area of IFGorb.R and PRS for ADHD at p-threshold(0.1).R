@@ -88,7 +88,7 @@ library(optimx)
 
 #section 脑区 PRS纳入模型----
 #与Emotion相关的脑区
-model_smri_area_cdk_parsobisrh <- glmer(smri_area_cdk_parsobisrh ~ SCORE +  #疑问 使用FL2的Age还是FL3的Age
+model_smri_area_cdk_parsobisrh <- glmer(smri_area_cdk_parsobisrh ~ SCORE +  
                                          sex2 + Age2 + demo_comb_income_v2 + demo_prnt_ed_v2 + 
                                         as.factor(race_ethnicity) + PC1 + PC2 + PC3 + PC4 + PC5 + PC6 + PC7 + PC8 + PC9 + PC10 +  scale(smri_vol_scs_intracranialv)
                                          (1|site_id_l/rel_family_id),data = ABCD_CBCL_Emotion_Cognition_Motivation_FL2_PRS_0.1_PC, family = "poisson")
@@ -105,7 +105,7 @@ Puberty <- read_excel("Puberty.xlsx")
 ABCD_CBCL_Emotion_Cognition_Motivation_FL2_PRS_0.1_PC <- left_join(ABCD_CBCL_Emotion_Cognition_Motivation_FL2_PRS_0.1_PC, Puberty,  by="src_subject_id")
 ABCD_CBCL_Emotion_Cognition_Motivation_FL2_PRS_0.1_PC[130:132] <- lapply(ABCD_CBCL_Emotion_Cognition_Motivation_FL2_PRS_0.1_PC[130:132], as.numeric)
 
-model_smri_area_cdk_parsobisrh_Sen <- glmer(smri_area_cdk_parsobisrh ~ SCORE +  #疑问 使用FL2的Age还是FL3的Age
+model_smri_area_cdk_parsobisrh_Sen <- glmer(smri_area_cdk_parsobisrh ~ SCORE + 
                                           sex2 + scale(Age2) + demo_comb_income_v2 + scale(demo_prnt_ed_v2) + BMI + A_puberty +
                                           as.factor(race_ethnicity) + PC1 + PC2 + PC3 + PC4 + PC5 + PC6 + PC7 + PC8 + PC9 + PC10 +  scale(smri_vol_scs_intracranialv)
                                           (1|site_id_l/rel_family_id),data = ABCD_CBCL_Emotion_Cognition_Motivation_FL2_PRS_0.1_PC, family = "poisson")

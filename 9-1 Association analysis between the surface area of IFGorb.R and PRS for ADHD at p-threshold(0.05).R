@@ -98,7 +98,7 @@ ABCD_CBCL_Emotion_Cognition_Motivation_FL2_PRS_0.05_PC[133:135] <- lapply(ABCD_C
 library(blme)
 library(optimx)
 #section 脑区 PRS纳入模型----
-model_smri_area_cdk_parsobisrh <- glmer(smri_area_cdk_parsobisrh ~ SCORE +  #疑问 使用FL2的Age还是FL3的Age
+model_smri_area_cdk_parsobisrh <- glmer(smri_area_cdk_parsobisrh ~ SCORE + 
                                               sex2 + scale(Age2) + demo_comb_income_v2 + scale(demo_prnt_ed_v2) + 
                                               (1|site_id_l/rel_family_id),data = ABCD_CBCL_Emotion_Cognition_Motivation_FL2_PRS_0.05_PC,family = "poisson")
 summary(model_smri_area_cdk_parsobisrh)

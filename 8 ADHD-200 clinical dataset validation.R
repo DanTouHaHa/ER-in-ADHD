@@ -5,7 +5,7 @@ ADHD_200 <- read_excel("ADHD200数据分析hand_01_718.xlsx")
 str(ADHD_200) 
 ADHD_200[5:20] <- lapply(ADHD_200[5:20], as.numeric)
 ADHD_200 <- as.data.frame(ADHD_200)
-#共计592人；其中NC:419人，ADHD:共173人。
+#其中NC:409人，ADHD:共263人。
 library(lme4)
 library(lmerTest)
 #section ADHD(1) vs NC(0) ----

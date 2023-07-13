@@ -10,7 +10,7 @@ library(simr)
 library(lme4)
 ######如果涉及到多组被试或者交叉项，需要 emmeans包进行事后检验与简单效应分析
 library(emmeans)
-
+ABCD_CBCL_Emotion_Cognition_MOtivation_FL2 <- read_excel("ABCD_CBCL_Emotion_Cognition_Motivation_FL2.xlsx")
 ###### 认知、情绪、动机、症状区分维度，先都按照不区分维度进行计算。
 ABCD_CBCL_Emotion_Cognition_MOtivation_FL2$TotalCognition <- rowSums(ABCD_CBCL_Emotion_Cognition_MOtivation_FL2[,c(6,7,8,11,12,13,25)],na.rm = T)
 ABCD_CBCL_Emotion_Cognition_MOtivation_FL2$Memory <- rowSums(ABCD_CBCL_Emotion_Cognition_MOtivation_FL2[,c(12,25)], na.rm = T)

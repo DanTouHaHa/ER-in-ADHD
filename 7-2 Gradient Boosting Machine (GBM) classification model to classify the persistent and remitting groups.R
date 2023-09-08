@@ -13,7 +13,7 @@ testx = newdata4[-inTrain,]
 testx <- testx[,3:13]
 trainy = ABCD_T1_ECM_uncorrtced_FDR_65_delete$persistentORnot[inTrain]
 testy = ABCD_T1_ECM_uncorrtced_FDR_65_delete$persistentORnot[-inTrain]
-fitControl = trainControl(method = "repeatedcv", number = 10, repeats = 10,returnResamp = "all")
+fitControl = trainControl(method = "repeatedcv", number = 5, repeats = 200,returnResamp = "all")
 #gbmGrid = expand.grid(.interaction.depth = c(1, 3),.n.trees = c(50, 100, 150, 200, 250, 300),.shrinkage = 0.1)
 library("gbm")
 gbmFit1 = train(trainx,as.factor(trainy),method = "gbm",trControl = fitControl) 

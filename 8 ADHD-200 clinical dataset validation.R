@@ -21,7 +21,7 @@ result_ADHD_NC_SA <- as.data.frame(result_ADHD_NC_SA)
 colnames(result_ADHD_NC_SA)[4] = 'pvalue'
 result_ADHD_NC_SA$P.Adj <- p.adjust(result_ADHD_NC_SA$pvalue, method = 'fdr', n = length(result_ADHD_NC_SA$pvalue))
 
-
+#### linear regression #####
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import KFold

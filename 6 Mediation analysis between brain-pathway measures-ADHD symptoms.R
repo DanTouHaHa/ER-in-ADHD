@@ -76,13 +76,8 @@ ABCD_T1_ECM_uncorrtced[110:118] <- lapply(ABCD_T1_ECM_uncorrtced[110:118], as.nu
 model_1 <- PROCESS(ABCD_T1_ECM_uncorrtced, y = "scale_inattention", meds = "scale_TotalEmotionScore", 
         x ="scale_par", #中介变量，可以是多个，用c()
         covs = c("Age2", "sex2","demo_comb_income_v2","demo_prnt_ed_v2","smri_vol_scs_intracranialv", 
+                 "scale_BAS", "scale_Cog",
                  "race_ethnicity", "site_id_l"), #协变量
         ci = "boot", nsim = 5000, seed = 1)
 model_1[["results"]][[1]][["mediation"]]
 
-model_1 <- PROCESS(ABCD_T1_ECM_uncorrtced, y = "scale_inattention", meds = "scale_TotalEmotionScore", 
-        x ="scale_par", #中介变量，可以是多个，用c()
-        covs = c("Age2", "sex2","demo_comb_income_v2","demo_prnt_ed_v2","BMI","A_puberty","smri_vol_scs_intracranialv", 
-                 "race_ethnicity", "site_id_l"), #协变量
-        ci = "boot", nsim = 5000, seed = 1)
-model_1[["results"]][[1]][["mediation"]]

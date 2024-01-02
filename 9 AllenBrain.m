@@ -5,7 +5,7 @@
 clear;
 clc;
 
-cd('E:\Fudan_Luoqiang_RestMDD_metaProject\848MDD_794NC\数据分析\数据整理统计分析\富集分析基因表达\AllenBrain/');
+cd('E:\Fudan_Luoqiang_RestMDD_metaProject\848MDD_794NC\鏁版嵁鍒嗘瀽\鏁版嵁鏁寸悊缁熻鍒嗘瀽\瀵岄泦鍒嗘瀽鍩哄洜琛ㄨ揪\AllenBrain/');
 load('AHBA_Mean_scaled_reanote.mat'); 
 load ('AHBA_data_reanote_slim.mat');
 load('AHBA_ROI_index_80.mat');
@@ -24,8 +24,8 @@ load('lost_data.mat');
 %                           15408 genes
 %%
 % parameters to change
-work_dir = 'E:/Fudan_Luoqiang_MDDProject/848MDD_794NC/数据分析/数据整理统计分析/富集分析基因表达/AllenBrain/ERtoADHD/Orginal_Z';
-Yraw = readtable('E:\Fudan_Luoqiang_RestMDD_metaProject\848MDD_794NC\数据分析\数据整理统计分析\富集分析基因表达\AllenBrain\ERtoADHD\Orginal_Z\OrginalMotivationInattention.csv'); 
+work_dir = 'E:/Fudan_Luoqiang_MDDProject/848MDD_794NC/鏁版嵁鍒嗘瀽/鏁版嵁鏁寸悊缁熻鍒嗘瀽/瀵岄泦鍒嗘瀽鍩哄洜琛ㄨ揪/AllenBrain/ERtoADHD/Orginal_Z';
+Yraw = readtable('E:\Fudan_Luoqiang_RestMDD_metaProject\848MDD_794NC\鏁版嵁鍒嗘瀽\鏁版嵁鏁寸悊缁熻鍒嗘瀽\瀵岄泦鍒嗘瀽鍩哄洜琛ㄨ揪\AllenBrain\ERtoADHD\Orginal_Z\OrginalMotivationInattention.csv'); 
 brain_section = 3;%------1:cortical,2:subcortical,3:whole brain
 ROI_radius =5;%set a radius of a sphere to coordinata probes and ROIs.
 % Yraw.Properties.VariableNames
@@ -40,7 +40,7 @@ len = size(XYZ_lables,2);
 switch brain_section
     case {1}        
         %cortical
-        B = Coordinatesall(Ncort_l_80(:,1),:); %采样点的坐标
+        B = Coordinatesall(Ncort_l_80(:,1),:); %閲囨牱鐐圭殑鍧愭爣
         cort_l_expMS_new = [zscore(cort_l_expMS)];
     case {2}
         %subcortical
@@ -67,7 +67,7 @@ for i = 1:len
     end
 end
 
-X = all_roi_exp(in_rois,:); %只有90个脑区能够有gene数据
+X = all_roi_exp(in_rois,:); %鍙湁90涓剳鍖鸿兘澶熸湁gene鏁版嵁
 %%
 for feature = 1:feature_total
     Y = Yraw_new(in_rois,6+feature); %column 5~8 features:{'FHC'}    {'FMDD'}    {'MHC'}    {'MMDD'}

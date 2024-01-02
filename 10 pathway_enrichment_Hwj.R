@@ -1,10 +1,5 @@
 ## Function: enrichment analysis of genes 
-# -----------------------------------------
-# Author: Cao Luolong, caoluolong@outlook.com
-# Date created: 09-04-2021
-# Date updated: 2022.07.05
-# Warning: 
-# @FUDAN.
+
 
 # if (!require("BiocManager", quietly = TRUE))
 #   install.packages("BiocManager")

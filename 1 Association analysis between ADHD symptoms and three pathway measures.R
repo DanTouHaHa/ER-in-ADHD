@@ -53,7 +53,7 @@ ABCD_CBCL_Emotion_Cognition_MOtivation_FL2[99:101] <- lapply(ABCD_CBCL_Emotion_C
 model_totalsymptom <- lmer(rawscore ~ TotalEmotionScore + 
                              TotalCognition + BAS + 
                              sex2 + Age2 + demo_comb_income_v2 + demo_prnt_ed_v2 + 
-                           race_ethnicity+
+                           as.factor(race_ethnicity)+
                              (1|site_id_l/rel_family_id),data = ABCD_CBCL_Emotion_Cognition_MOtivation_FL2)
 summary(model_totalsymptom)
 summary(model_totalsymptom)$coef

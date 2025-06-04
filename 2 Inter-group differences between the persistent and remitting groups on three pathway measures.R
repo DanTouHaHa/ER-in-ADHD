@@ -31,7 +31,7 @@ result_pathway <- c()
 for (i in 99:101){
   fit <- lmer(ABCD_CBCL_Emotion_Cognition_MOtivation_FL2[,i] ~ persistentORnot + 
                 sex2 + Age2 + demo_comb_income_v2 + demo_prnt_ed_v2 +
-                as.factor(race_ethnicity) + 
+                race_ethnicity + 
                 (1|site_id_l/rel_family_id),data = ABCD_CBCL_Emotion_Cognition_MOtivation_FL2)
   result_pathway  <- rbind(result_pathway ,
                            c(colnames(ABCD_CBCL_Emotion_Cognition_MOtivation_FL2)[i], coef(summary(fit))[2,c(1,4,5)])) #将目标变量(2代表emotion)的β, t, p存储
@@ -55,7 +55,7 @@ result_pathway_1 <- c()
 for (i in 99:101){
   fit <- lmer(ABCD_CBCL_Emotion_Cognition_MOtivation_FL2_1[,i] ~ persistentORnot + 
                 sex2 + Age2 + demo_comb_income_v2 + demo_prnt_ed_v2 + 
-                as.factor(race_ethnicity) + 
+                race_ethnicity + 
                 (1|site_id_l/rel_family_id),data = ABCD_CBCL_Emotion_Cognition_MOtivation_FL2_1)
   result_pathway_1  <- rbind(result_pathway_1 ,
                              c(colnames(ABCD_CBCL_Emotion_Cognition_MOtivation_FL2_1)[i], coef(summary(fit))[2,c(1,4,5)])) #将目标变量(2代表emotion)的β, t, p存储
